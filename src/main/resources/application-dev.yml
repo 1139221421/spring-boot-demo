@@ -1,0 +1,21 @@
+server:
+  port: 8000
+  context-path: /little
+
+#把属性写到对象
+person:
+  gender: 女
+  age: 20
+
+gender: 男
+age: 18
+content: gender:${gender},age:${age}
+
+
+spring:
+  datasource: #配置数据库连接
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+

@@ -1,0 +1,45 @@
+spring:
+  profiles:
+  #分成开发环境和生产环境来配置
+#    active: dev #开发
+    active: prod #生产
+
+  jpa: #整合hibernate，（jpa方式）
+    hibernate:
+      ddl-auto: update #不会删除  #create每次都会删除
+    show-sql: true
+
+  freemarker: #整合freemarker模板
+    cache: false
+
+  redis: #redis
+    host: 118.24.101.162
+    port: 6379
+#    password:  #密码。默认为空
+    timeout: 0 # 连接超时时间
+    database: 0 # Redis数据库索引（默认为0）
+    pool:
+      max-active: 8 # 连接池最大连接数
+      max-wait: -1 # 连接池最大阻塞等待时间
+      max-idle: 8 # 连接池中的最大空闲连接
+      min-idle: 0 # 连接池中的最小空闲连接
+      # windows:进入安装目录 启动： redis-server.exe redis.windows.conf；访问服务，同样进入到安装目录redis-cli.exe -h 127.0.0.1 -p 6379；然后set myKey abc，get myKey
+      #linux:启动redis:./redis-server(通过制定配置文件启动./redis-server redis.conf)；客户端./redis-cli; set key 111;get key
+
+
+mybatis: #mybatis
+  type-aliases-package: com.lxl.vo
+  mapper-locations: classpath:mapper/*.xml #.xml方式 注解方式不需要此行配置，删除xml，直接把sql写在mapper接口方法上
+
+
+
+
+
+
+
+
+
+
+
+
+

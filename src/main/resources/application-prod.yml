@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  context-path: /little
+
+person:
+  gender: 女
+  age: 20
+
+gender: 男
+age: 18
+content: gender:${gender},age:${age}
+
+#多数据源配置
+spring:
+  datasource:
+    master:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: 123456
+    slave:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test1
+      username: root
+      password: 123456
